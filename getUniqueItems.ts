@@ -11,3 +11,15 @@ function getUniqueItems(_items: number[]) {
     return thisItems.indexOf(item) === index;
   });
 }
+
+//We can also use the function below to get
+function getUniqueItems2(_items: number[]) {
+  return _items.reduce((acc: any, next: number) => {
+    acc = acc || [];
+    if (!acc.includes(next)) {
+      acc.push(next);
+      console.log(acc);
+      return acc;
+    }
+  });
+}
