@@ -10,9 +10,8 @@ const player = [70, 80, 105];
 console.log('User Ranking is', climbingLeaderBoard(ranked, player));
 
 function climbingLeaderBoard(ranked: number[], player: number[]): number[] {
-  let userRanking: Array<number>;
-  userRanking = player.map((score) => getUserRanking(score));
-  return userRanking;
+  return player.map((score) => getUserRanking(score));
+
   function getUserRanking(score: number): number {
     let modifiedRanking = Array.from(new Set([...ranked, score]));
     modifiedRanking.sort(function compareNumbers(a, b) {
